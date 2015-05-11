@@ -1,0 +1,28 @@
+* { margin:0; padding:0;}
+.xxx_Class {  margin:0 auto; position:absolute;background:#fff;}
+
+
+.div_500 {  margin:0 auto; background:#fff;}
+.div_top_title { height:30px; line-height:30px; color:#334d87; background:#d2efff}
+.div_top_ts { font-weight:bold; padding-left:10px; float:left}
+.div_top_right { padding-right:5px; float:right; padding-top:3px;}
+.div_top_quit { display:block; float:right; width:62px; height:23px; background:url(images/xx_close_icon.png) no-repeat 0px -88px;}
+
+
+.div_middle { width:90%; margin:0 auto; padding-top:20px;}
+.div_middleImg1,.div_middleImg2,.div_middleImg3,.div_middleImg4,.div_middleImg5 { width:90px; height:75px; float:left;margin:0px 0 0 20px; background:url(images/middleImg.png) no-repeat}
+.div_middleImg1 { background-position:0px 0px}
+.div_middleImg2 { background-position:0px -75px}
+.div_middleImg3 { background-position:0px -150px}
+.div_middleImg4 { background-position:0px -225px}
+.div_middleImg5 { background-position:0px -300px}
+.div_middleText { height:100px;font-size:16px; line-height:70px; font-weight:bold; color:#9d3d12; float:left; }
+
+.div_bottom{clear:both;}
+.div_bottom p { text-align:right; padding:0 20px 10px 0;}
+  
+.xxx_ok,.xxx_ok span,.xxx_cancel,.xxx_cancel span{ background:url(images/xxx_icon.png) no-repeat}
+.xxx_ok { line-height:28px; text-align:center;color:#874e04; display:inline-block; background-position:0px -288px}
+.xxx_ok span{ display:inline-block; cursor:pointer; font-size:14px; font-weight:bold;  padding:0px 20px; height:28px; background-position:right -316px;}
+.xxx_cancel { margin-left:15px; line-height:28px; text-align:center;color:#874e04; display:inline-block; background-position:0px -344px}
+.xxx_cancel span{ display:inline-block; cursor:pointer; font-size:14px; font-weight:bold;  padding:0px 20px; height:28px; background-position:right -372px;}

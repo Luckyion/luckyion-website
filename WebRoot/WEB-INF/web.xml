@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- Struts配置 开始 -->
+  <filter>
+  	<filter-name>FilterDispatcher</filter-name>
+  	<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>FilterDispatcher</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!-- Struts配置 结束 -->
+  
+  <!-- Spring配置开始 -->
+  <listener>
+  	<listener-class >org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/applicationContext*.xml,classpath*:applicationContext*.xml
+		</param-value>
+	</context-param>
+  <!-- Spring配置结束-->
+  <filter>
+  	<filter-name>LoginFilter</filter-name>
+  	<filter-class>com.luckyion.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>LoginFilter</filter-name>
+  	 <url-pattern>/Jsps</url-pattern>
+  </filter-mapping>
+  <filter>
+  	<filter-name>EncodingFilter</filter-name>
+  	<filter-class>com.luckyion.filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>EncodingFilter</filter-name>
+  	<url-pattern>/</url-pattern>
+  </filter-mapping>
+  <!-- SSL配置开始 -->
+  <!-- 
+    <security-constraint>
+       <web-resource-collection>
+           <web-resource-name>SSL Resource</web-resource-name>
+           <url-pattern>/*</url-pattern>
+       </web-resource-collection>
+       <user-data-constraint>
+               <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+       </user-data-constraint>
+</security-constraint>
+ -->
+  <!-- SSL配置结束 -->
+</web-app>

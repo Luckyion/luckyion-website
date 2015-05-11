@@ -1,0 +1,32 @@
+/* tables */
+.show {
+	font-family:arial;
+	background-color: #EEF2FB;
+	margin:10px 0pt 15px;
+	font-size: 13px;
+	width: 100%;
+	text-align: left;
+	cursor:hand;
+}
+.show tbody tr
+{    
+  /*设置onmouseover事件*/    
+  onmouseover:expression(onmouseover=function(){this.style.borderColor ='blue';this.style.color='red';this.style.backgroundColor ='#e6EEEE'});   
+  /*设置onmouseout事件*/    
+  onmouseout:   expression(onmouseout=function(){this.style.borderColor='';this.style.color='';this.style.backgroundColor =''});    
+  background-color:#ffffff;    
+  }    
+.show thead tr th{
+	background-color:#EEF2FB;
+	border: 1px solid #FFF;
+	font-size: 13px;
+	padding: 4px;
+	text-align: center;
+}
+.show tbody td {
+	color: #000000;
+	padding: 4px;
+	vertical-align: middle;
+	text-align: center;
+}
+ 

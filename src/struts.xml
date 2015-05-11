@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+   <package name="ye" extends="json-default">  <!-- 包名可以随便叫-->
+	 	 <!-- 系统管理action配置开始 -->
+	  <action name="loginAction" class="com.luckyion.action.LoginAction">
+	  		<result name="success" type="redirect">/Jsps/main.jsp</result>
+	  		<result name="error">login.jsp</result>
+	  		<result name="left">/Jsps/left.jsp</result>
+	  		<result name="right">/Jsps/right.jsp</result>
+	  		<result name="top">/Jsps/admin_top.jsp</result>
+	  </action>
+	  <action name="logout" class="com.luckyion.action.LoginAction" method="logout">
+	  		<result name="logout">login.jsp</result>
+	  </action>
+   </package> 
+   <package name="manager" extends="struts-default,json-default">
+   		<action name="clientAction" class="com.luckyion.action.ClientAction">
+   			<result type="json">
+   			</result>
+   		</action>
+   		<action name="foreAction" class="com.luckyion.action.ForegroundAction">
+   			<result type="json">
+   				<param name="excludeProperties">
+					messagesService
+		    	</param>
+   			</result>
+   			<result name="free">
+   				/Jsps/Foreground/photodesk.jsp
+   			</result>
+   			<result name="delMessage">
+   				/Jsps/Foreground/newsdetails.jsp
+   			</result>
+   		</action>
+   		<action name="userAction" class="com.luckyion.action.UsersAction">   			
+   			<result type="json">
+   				<param name="excludeProperties">
+					users
+		    	</param>
+   			</result>
+   			<result name="edit">Jsps/Settings/editUser.jsp</result>
+   			<result name="search">Jsps/Settings/settings.jsp</result>
+   			<result name="add">Jsps/Settings/addUser.jsp</result>
+   			<result name="del">Jsps/Settings/settings.jsp</result>
+   		</action>
+   		<action name="messageDistribute" class="com.luckyion.action.MessageDistribute">
+   			<result type="json">
+   				<param name="excludeProperties">
+					messagesService
+		    	</param>
+   			</result>
+   			<result name="ok">/Jsps/Messages/message.jsp</result>
+   			<result name="edit">/Jsps/Messages/editMessage.jsp</result>
+   		</action>
+   		<action name="fileManager" class="com.luckyion.action.FileManagerAction">
+   			<param name="pageSize">12</param>
+	  		<param name="pagecur">1</param>
+   			<result name="listFile">/Jsps/Files/fileManager.jsp</result>
+   		</action>
+   		<action name="fileUpload" class="com.luckyion.action.FileManagerAction" method="fileUpload">	  		          
+	  		<!-- 动态设置savePath的属性值 -->
+            <param name="savePath">/usersimages</param>            
+	  		<interceptor-ref name="fileUpload">
+	  		<!-- 文件过滤 -->
+	  		<param name="allowedTypes">
+	  			image/bmp,image/png,image/gif,image/jpeg,image/jpg,application/pdf,application/zip
+	  			</param>
+	  		<param name="maximumSize">10485760</param>
+	  		</interceptor-ref>
+	  		<interceptor-ref name="defaultStack"></interceptor-ref>
+	  		<result name="listFile">/Jsps/Files/fileManager.jsp</result>
+	  		<result type="json">
+	  			<param name="root">responseJson</param>
+	  		</result>
+	  		<result name="input">/Jsps/Files/uploaderr.jsp</result>
+	  </action>
+	  <!-- 下载文件的Action -->
+        <action name="fileDownload" class="com.luckyion.action.FileDownloadAction">
+          <!-- 配置结果类型为stream的结果 -->
+          <result name="success" type="stream">
+             <!-- 指定下载文件的类型 -->
+             <param name="contentType">text/plain</param>             
+             <param name="contentDisposition">attachement;filename=${fileName}</param>   
+             <!-- 指定下载文件的位置 -->
+             <param name="inputName">targetFile</param>          
+             <!-- 指定下载文件的缓冲大小 -->
+             <param name="bufferSize">2048</param>
+          </result>
+        </action>
+   </package>
+   </struts>

@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+body {
+	margin-left: 1px;
+	margin-top: 1px;
+	margin-right: 1px;
+	margin-bottom: 1px;
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#000000;
+	background-color:#EBFDBA;
+	
+	SCROLLBAR-FACE-COLOR: #f2f2f2; 
+ SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; 
+ SCROLLBAR-SHADOW-COLOR: #ffffff; 
+ SCROLLBAR-3DLIGHT-COLOR: #f2f2f2; 
+ SCROLLBAR-ARROW-COLOR: #1c97f7; 
+ SCROLLBAR-TRACK-COLOR: #f2f2f2; 
+ SCROLLBAR-DARKSHADOW-COLOR: #f2f2f2; 
+ SCROLLBAR-BASE-COLOR: #000000;
+
+}
+div#top_div{
+background-color:#f6f5ec            
+}
+ul#menu, ul#menu ul {
+  background-color:#f6f5ec
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  width: 15em;
+}

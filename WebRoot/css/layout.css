@@ -1,0 +1,7 @@
+body { background-color:#aaa;background-image:url(../images/2e_bg.jpg);font-family:Verdana; font-size:14px; margin:0;}
+
+#container {margin:0 auto; width:900px;}
+#menu { height:30px; background: #CDBD89; margin-bottom:5px;}
+#menu_span{margin-left: 30px; color:yellow;}
+#header { height:100px; background:#DBD3AE; margin-bottom:5px;}
+#mainContent { height:520px; background:#E9E3CB;}
