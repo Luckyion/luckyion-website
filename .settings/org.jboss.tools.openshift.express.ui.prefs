@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+org.jboss.tools.openshift.ApplicationId=5538f8f14382ec583f000053
+org.jboss.tools.openshift.ApplicationName=mysite
+org.jboss.tools.openshift.Connection=https\://luckyion@
+org.jboss.tools.openshift.DeployFolder=webapps
+org.jboss.tools.openshift.Domain=luckyion
+org.jboss.tools.openshift.RemoteName=openshift
